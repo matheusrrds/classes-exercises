@@ -1,3 +1,5 @@
+# MATHEUS RAMOS RODRIGUES DE SOUZA
+
 price = float(input())
 cents = price * 100
 
