@@ -1,12 +1,5 @@
 # MATHEUS RAMOS RODRIGUES DE SOUZA
 
-# Exercício 3 - Ordenação de 5 elementos com 7 comparações [Peso 25]
-# Escreva um programa em Python que recebe como entrada 5 valores e, efetuando no
-# máximo 7 comparações, ordena os valores de entrada, conforme discutido na Aula 6. O
-# programa deve imprimir os valores de entrada em ordem crescente. Inclua comentários no
-# código para explicar o raciocínio por trás de cada trecho. Ao lado de cada comparação,
-# inclua um comentário indicando quantas comparações foram realizadas até aquele ponto.
-
 a, b, c, d, e = map(int, input().split())
 
 if a > b : # 1º comparação
@@ -49,7 +42,7 @@ else:
         else : # se e <= a temos a seguinte ordem final:
             print(e, a, b, c, d)
 
-# O programa apresenta 7 comparações em todos casos exceto e <= c and e <= b, não consegui fazer menos do que isso :/
+# O programa apresenta 7 comparações em todos casos exceto e <= c and e <= b
 
 
 
