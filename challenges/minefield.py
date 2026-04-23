@@ -17,6 +17,8 @@
 # em seus lugares originais. Porém, todos os pontos . devem ser substituídos por um número
 # de 0 a 8, indicando a quantidade de bombas adjacentes àquela célula.
 
+# MATHEUS RAMOS RODRIGUES
+
 lines, columns = map(int, input().split())
 minefield = []
 safe_indices = []

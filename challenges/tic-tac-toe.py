@@ -9,6 +9,8 @@
 # essa informação deve ser impressa na tela bem como a identificação do jogador vencedor,
 # quando for o caso.
 
+# MATHEUS RAMOS RODRIGUES
+
 places = [
           [' ', ' ', ' '], 
           [' ', ' ', ' '], 
