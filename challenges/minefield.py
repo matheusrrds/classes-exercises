@@ -21,7 +21,6 @@ lines, columns = map(int, input().split())
 minefield = []
 safe_indices = []
 danger_indices = []
-minifield_updated = []
 bomb = 0
 
 for line in range(lines) :
