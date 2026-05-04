@@ -27,10 +27,14 @@ while n >= 3 :
 
     if len(num_3) > 1 :
         
-        for i in range(-1, -len(num_3) + 1) :
+        for i in range(-1, -len(num_3)) :
             inverted_number_str += num_3[i]
 
-    num_3 = int(num_3)
+        num_3 = int(inverted_number_str)
+
+    else :
+
+        num_3 = int(num_3)
 
     fibonacci.insert(0, num_3)
     n -= 1
