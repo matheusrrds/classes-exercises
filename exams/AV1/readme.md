@@ -6,4 +6,4 @@ O material representa uma avaliação prática desenvolvida no contexto da disci
 
 ## 📄 Enunciado da Prova
 
-<iframe src="progamacao-av1.pdf" width="100%" height="600px"></iframe>
+[Abrir PDF completo](programacao-av1.pdf)
