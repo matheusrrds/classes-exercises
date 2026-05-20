@@ -11,8 +11,8 @@ def buy_price(total_price, ship_tax=15.99, discount=0) :
         
     """
 
-    buy_price = (total_price + ship_tax) - discount*total_price
-    return print(f'{buy_price:.2f}')
+    final_price = (total_price + ship_tax) - discount*total_price
+    return print(f'{final_price:.2f}')
 
 buy_price(100)
 buy_price(100, discount=0.1)
