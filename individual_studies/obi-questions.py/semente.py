@@ -1,43 +1,33 @@
 f, r = map(int, input().split())
-initial_positions = list(map(int, input().split()))
 
-infected_indices = {position-1 for position in initial_positions}
+initial_indices = [indice for indice in range(1, f+1)]
+infected_indices = list(map(int, input().split()))
 
-fita_contamined = [0]*f
-counter = 0
-proceed = True
-transition = []
+initial_dist = infected_indices[0] - 1
 
-while proceed :
+final_dist = f - infected_indices[-1]
 
-    infected_indices.update(transition)
-    transition = set()
+centrals = []
 
-    for indice in infected_indices: 
+for i in range(len(infected_indices)-1) :
 
-        fita_contamined[indice] = 1
+    central_distance = (infected_indices[i+1] - infected_indices[i]) // 2
+    centrals.append(central_distance)
 
-    for indice in infected_indices :
+if len(centrals) == 0 :
+    centrals.append(0)
 
-        if indice == 0 :
-            transition.add(indice+1)
+distances = [max(centrals), initial_dist, final_dist]
 
-        elif indice > 0 and indice < (f-1) :
-            transition.update([indice-1, indice+1])
-        
-        else :
-            transition.add(indice-1)
+print(max(distances))
+    
 
-        if fita_contamined == [1]*f :
-            proceed = False
+# tem que achar o minimo (i - Pj) que seria no caso a quantidade de dias que um indice i
+# leva para ser contaminado 
 
-    if proceed != False :
-        counter += 1
-        
+# ai tem que achar o maximo desse minimo (i-pj) para saber o maior numero de dias que
+# o ngc leva pra ficar todo contaminado
 
-print(counter)
-
-# AINDA NAO FINALIZADO ERRO TEMPO LIMITE :/
 
 
 
