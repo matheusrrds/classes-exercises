@@ -1,42 +1,28 @@
 n, f = map(int, input().split())
-cicles = list(map(int, input().split()))
+ciclos = list(map(int, input().split()))
 
-capsulas_ciclos = {}
-capsulas_num = {}
+# x // C1 + x // C2 + x // CN >= f
+# se a soma der bem maior q f, significa que precisamos dum x menor
 
-mmc = 1
-summation = 0
+left = 1
+right = 10**9
+total = 0
+ans = 0
 
-# aproximação: 42f / 41 <= x
+while left <= right :
 
-for i in range(1, n+1) :
-    capsulas_ciclos[i] = cicles[i-1]
-    mmc *= capsulas_ciclos[i]
+    m = (left + right) // 2
+    total = 0
 
-for i in range(1, n+1) :
-    capsulas_num[i] = round(mmc / capsulas_ciclos[i])
+    for cicle in ciclos :
+        total += (m//cicle)
 
-    summation += capsulas_num[i]
+    if total >= f :
 
-result_aproximado = int(mmc*f / summation)
+        ans = m
+        right = m - 1
 
-while True :
-    somatory = 0
-
-    for i in range(1, n+1) :
-
-        somatory += (result_aproximado // capsulas_ciclos[i])
-    
-    if somatory >= f :
-        print(result_aproximado)
-        break
     else :
-        result_aproximado += 1
-        continue
+        left = m + 1
 
-    
-# num = mmc/3 + num2 = mmc/7  + num3 = mmc/ 2   
-
-# x/3 + x/7 + x/2 >= f
-
-# funciona mas TEMPO EXCEDIDO NESSA SOLUÇÃO :/
+print(ans)
