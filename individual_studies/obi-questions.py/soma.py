@@ -2,20 +2,40 @@ n, k = map(int, input().split())
 sequence = list(map(int, input().split()))
 count = 0
 
-while True :
-    total = 0
+left = 0
+right = 0
 
-    for i in range(len(sequence)):
+while left < n and right < n :
 
-        total += sequence[i]
+    rectangle = sequence[left:right+1]
+    soma = sum(rectangle)
 
-        if total == k :
-            count += 1
-    
-    sequence.pop(0)
+    if soma < k :
+        right += 1
 
-    if not sequence :
-        break
+    elif soma > k :
+
+        left += 1
+        right = left
+
+    elif soma == k :
+        
+        count += 1
+
+        try :
+
+            if sequence[right+1] == 0:
+                right += 1
+
+            else :
+                
+                left += 1
+                right = left
+        
+        except :
+
+            left += 1
+            right = left
+
 
 print(count)
-
