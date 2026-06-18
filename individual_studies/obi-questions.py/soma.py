@@ -1,41 +1,17 @@
 n, k = map(int, input().split())
 sequence = list(map(int, input().split()))
-count = 0
 
-left = 0
-right = 0
+ans = 0
+accumulator = 0
 
-while left < n and right < n :
+freq = {0:1}
 
-    rectangle = sequence[left:right+1]
-    soma = sum(rectangle)
+for r in range(len(sequence)) :
 
-    if soma < k :
-        right += 1
+    accumulator += sequence[r]
 
-    elif soma > k :
+    ans += freq.get(accumulator-k, 0)
 
-        left += 1
-        right = left
+    freq[accumulator] = freq.get(accumulator, 0) + 1
 
-    elif soma == k :
-        
-        count += 1
-
-        try :
-
-            if sequence[right+1] == 0:
-                right += 1
-
-            else :
-                
-                left += 1
-                right = left
-        
-        except :
-
-            left += 1
-            right = left
-
-
-print(count)
+print(ans)
