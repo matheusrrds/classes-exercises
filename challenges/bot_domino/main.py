@@ -4,7 +4,7 @@ Motor do jogo de dominó de duplas
 Este módulo implementa o motor do jogo de dominó de duplas.
 Ele controla o fluxo de uma partida, chamando os bots das duplas, analisando e executando os movimentos selecionados.
 
-ENTREGUE PELO PROFESSOR
+(produzido pelo professor)
 """
 
 import random as r
@@ -794,7 +794,7 @@ def jogar_partida(engine):
 
 def jogo():
     seed = None
-    target_score = 150
+    target_score = 100
     historic = True
 
     bot0 = bot_dupla_0.joga
