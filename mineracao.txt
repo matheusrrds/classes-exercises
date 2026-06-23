@@ -1,0 +1,5 @@
+R01, DrillBot, 50.0, 100.0
+R02, HeavyLoad, 80.0, 90.0
+R03, Scout, -10.0, 50.0
+R04, Micro, 30.0, 20.0
+R05, Alpha, cem, 200.0
