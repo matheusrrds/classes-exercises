@@ -1,8 +1,8 @@
-class NoMusica :
+class NoMusic :
 
-    def __init__(self, data) :
+    def __init__(self, name) :
 
-        self.data = data
+        self.name = name
         self.next = None
 
 class Playlist :
@@ -12,47 +12,44 @@ class Playlist :
         self.head = None
         self.size = 0
 
-    def __str__(self) :
-        
-        current = self.head
-        musics = []
+    def __len__(self) :
 
-        while current is not None :
-            musics.append(current.data)
-            current = current.next
-
-        return ' -> '.join(musics)
+        return self.size
     
     def __iter__(self) :
 
-        current = self.head
+        begin = self.head
 
-        while current is not None :
-            yield current.data
-            current = current.next
+        while begin is not None :
+            yield begin.name
+            begin = begin.next
+    
+    def inserir(self, nome_musica) :
 
-    def __len__(self) :
-        return self.size
+        node = NoMusic(nome_musica)
 
-    def add(self, song) :
-            
-        new = NoMusica(song)
+        if self.head is None :
 
-        if self.head is not None :
-
-            new.next = self.head
+            self.head = node
         
-        self.head = new
+        else :
+            node.next = self.head
+            self.head = node
+            
         self.size += 1
-                
+    
 
-musicas = Playlist()
-musicas.add('Deixe-me ir')
-musicas.add('Yellow')
-musicas.add('Photograph')
+minha_playlist = Playlist()
 
-print(musicas)
-print(len(musicas))
+minha_playlist.inserir("Bohemian Rhapsody")
+minha_playlist.inserir("Stairway to Heaven")
+minha_playlist.inserir("Hotel California")
 
-for musica in musicas :
-    print(musica)
+print(f"Total de músicas: {len(minha_playlist)}")
+
+for musica in minha_playlist:
+    print(f"Tocando agora: {musica}")
+
+
+
+
